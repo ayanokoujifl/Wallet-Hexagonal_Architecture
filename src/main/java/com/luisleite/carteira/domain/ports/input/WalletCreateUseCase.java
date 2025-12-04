@@ -1,4 +1,9 @@
 package com.luisleite.carteira.domain.ports.input;
 
-public class WalletCreateUseCase {
+import com.luisleite.carteira.domain.model.Wallet;
+
+public interface WalletCreateUseCase {
+
+    Wallet create(String userId);
+
 }
