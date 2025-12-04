@@ -1,5 +1,6 @@
 package com.luisleite.carteira.domain.usecase;
 
+import com.luisleite.carteira.domain.exception.DomainException;
 import com.luisleite.carteira.domain.model.Wallet;
 import com.luisleite.carteira.domain.ports.input.WalletCreateUseCase;
 import com.luisleite.carteira.domain.ports.output.WalletRepositoryPort;
@@ -15,7 +16,7 @@ public class WalletCreateUseCaseImpl implements WalletCreateUseCase {
     @Override
     public Wallet create(String userId) {
         if (walletRepositoryPort.existByUserId(userId)) {
-            throw new RuntimeException("This user already has a wallet");
+            throw new DomainException("This user already has a wallet");
         }
         var newWallet = new Wallet(userId);
         return walletRepositoryPort.save(newWallet);
