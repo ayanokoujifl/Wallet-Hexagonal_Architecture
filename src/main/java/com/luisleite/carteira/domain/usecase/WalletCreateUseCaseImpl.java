@@ -4,11 +4,11 @@ import com.luisleite.carteira.domain.model.Wallet;
 import com.luisleite.carteira.domain.ports.input.WalletCreateUseCase;
 import com.luisleite.carteira.domain.ports.output.WalletRepositoryPort;
 
-public class WalletUseCaseImpl implements WalletCreateUseCase {
+public class WalletCreateUseCaseImpl implements WalletCreateUseCase {
 
     private final WalletRepositoryPort walletRepositoryPort;
 
-    public WalletUseCaseImpl(WalletRepositoryPort walletRepositoryPort) {
+    public WalletCreateUseCaseImpl(WalletRepositoryPort walletRepositoryPort) {
         this.walletRepositoryPort = walletRepositoryPort;
     }
 
